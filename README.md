@@ -77,26 +77,23 @@ The system was put through strict edge-case testing using official messy data sc
 * **Input State:** Lowercase name strings (`sadia aktar`), broken shorthand course codes (`ui ux`), and an uppercase domain typo (`SADIA@GAMIL.COM`).
 * **Automation Response:** Captured by the preprocessing engine. Capitalized names, matched the programmatic course label map, repaired the structural domain typo to `@gmail.com`, and moved down the success loop.
 * **Visual Output Results:**
-  * **Google Sheets Row Update (Pre vs Post Transformation):**
-    ![Google Sheets Cleaned Row](Image/case2_sheet_updated.png)
+  * **Google Sheets Row Update:**
+    ![Google Sheets Cleaned Row](Images/process_output_sheet.png)
 
 ---
 
 ### ❌ Test Case 3: Structurally Invalid Case (Karim)
 * **Input State:** Missing domain extension (`karim@yahoo` with no `.com`) and string fallback values for files (`empty`).
-* **Automation Response:** The initial verification filter blocked processing to safeguard storage structures. The module then flagged the row as an `Invalid Submission` and triggered the automated error notification.
+* **Automation Response:** The initial verification filter blocked processing to safeguard storage structures. The module then flagged the row as an `Invalid Submission` and triggered the automated error notification. As mail was error, no email was sent. But if mail is correct and submission link is invalid, then a notification mail is sent.
 * **Visual Output Results:**
   * **Make Validation Error Exception Execution Path:**
-    ![Make Error Execution Path](Image/case3_invalid_execution.png)
+    ![Make Error Execution Path](Images/formatting_error.png)
 
 ---
 
 ### 👥 Test Case 4: Duplicate Submission Safeguard
 * **Input State:** Submitting Test Case 1 (`Rahim Uddin`) a second time within the same evaluation parameters.
 * **Automation Response:** `Search Rows 13` triggered, scanned the sheet history, found **2 matching entries**, satisfied the `bundles >= 2` rule, routed the scenario away from asset creation modules, and labeled the row `Duplicate Submission`.
-* **Visual Output Results:**
-  * **Make Canvas Stopped at Duplicate Router:**
-    ![Make Canvas Stopped at Duplicate Router](Image/case4_duplicate_blocked.png)
 
 ---
 
