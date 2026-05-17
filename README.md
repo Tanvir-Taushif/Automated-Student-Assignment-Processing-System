@@ -30,7 +30,7 @@ The automation is structured as a programmatic pipeline consisting of strict val
 ### 📸 Overall Workspace Canvas
 Below is the full, operational Make.com scenario diagram detailing the interconnected logic gates and paths:
 
-![Make.com Full Scenario Map](Image/make_full_scenario.png)
+![Make.com Full Scenario Map](Images/Full_Workflow_Snapshot.png)
 
 ---
 
