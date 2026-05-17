@@ -42,14 +42,12 @@ This module uses built-in operational text functions to automatically correct hu
 * **Email Correction:** Nested `replace` functions systematically clean up common trailing spaces and domain typos (e.g., changing `gamil.com`, `grial.com`, or `yaho.com` back to corporate standards).
 * **Course Selection Mapping:** A `switch` block maps shorthand strings (like `ui ux`, `web dev`, `mern`) directly to official departmental labels (e.g., `UI/UX Design`, `Web Development`, `MERN Stack`).
 
-![Tools Data Cleaning Configuration](Image/tools_cleaning_setup.png)
 
 ### 2. Relational Deduplication Engine (`Search Rows 13` & `Filter 14`)
 To maintain record integrity, the workflow queries the sheet using variables from the text-cleaning layer. 
 * **The Logic:** Because this module runs *after* the new submission is written to the sheet, a unique submission will find **exactly 1 bundle** (matching itself). A repeat submission will return **2 or more bundles**. 
 * **The Filter Rule:** The duplicate route filter is strictly mapped to `Total number of bundles Greater than or equal to 2` to accurately catch actual re-submissions.
 
-![Search Rows & Router Filter Setup](Image/router_duplicate_filter.png)
 
 ---
 
@@ -63,13 +61,15 @@ The system was put through strict edge-case testing using official messy data sc
 * **Visual Output Results:**
   
   * **Dynamic Google Drive Student Directory Structure:**
-    ![Google Drive Student Folder Created](Image/case1_drive_folder.png)
+    ![Google Drive Student Folder Created](Images/student_directory_folder.png)
   
   * **Auto-Populated Evaluation Document Template:**
-    ![Generated Google Doc Body](Image/case1_google_doc.png)
+    ![Generated Google Doc Body](Images/student_directory_document.png)
   
   * **Instant Two-Way Notification Alerts:**
-    ![Instructor Notification Email](Image/case1_teacher_email.png)
+    ![Instructor Notification Email](Images/instructor_email.png)
+
+    ![Student's Notification Email](Images/student_email.png)
 
 ---
 
